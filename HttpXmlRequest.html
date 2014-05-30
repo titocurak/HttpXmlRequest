@@ -1,0 +1,60 @@
+<html>
+    <head>
+      <script type="text/javascript">
+        var cont;
+        var data;
+
+		function onload()
+{
+var request;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  request=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  request=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+request.onreadystatechange=function(e)
+  {
+  if (request.readyState==4 && request.status==200)
+    {
+    request.responseXML;
+    }
+  }
+request.open("GET","http://weather.yahooapis.com/forecastrss?w=91863141&u=c",true);
+request.send(null);
+}
+
+        function requestAjax ()
+        {
+            try
+            {
+                var request = new XMLHttpRequest();
+            }catch(error1)
+            {
+                try
+                {
+                    var request = ActiveXObect("Msxm12.XMLHTTP");
+                }
+                catch(error2)
+                {
+                    try
+                    {
+                        var request = ActiveXObect("Microsoft.XMLHTTP");
+                    }catch(error3)
+                }
+                {
+                    var request = false;
+                }
+            }
+        }
+          return request;
+
+      </script>  
+    </head>
+    <body onload="onLoad()">
+        <p id="cont"></p>
+        <input type="button" value="Hacer un request a xml!" onclick="function(e);"></input>
+    </body>
+</html>
